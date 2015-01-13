@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="webView_app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +16,36 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FPy-Mh-tTo">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="B2N-wU-pJ6"/>
+                                </connections>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="FPy-Mh-tTo" secondAttribute="centerY" id="1ug-oP-Ozr"/>
+                            <constraint firstAttribute="trailing" secondItem="FPy-Mh-tTo" secondAttribute="trailing" id="3Bx-7h-wpL"/>
+                            <constraint firstItem="FPy-Mh-tTo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="IAB-9f-Ynp"/>
+                            <constraint firstItem="FPy-Mh-tTo" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="T7y-mx-X9B"/>
+                            <constraint firstAttribute="centerX" secondItem="FPy-Mh-tTo" secondAttribute="centerX" id="aq2-A0-alV"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="FPy-Mh-tTo" secondAttribute="bottom" id="aum-AT-4r7"/>
+                            <constraint firstItem="FPy-Mh-tTo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="cFr-KV-83U"/>
+                            <constraint firstAttribute="trailing" secondItem="FPy-Mh-tTo" secondAttribute="trailing" id="j5O-YT-aLn"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="IAB-9f-Ynp"/>
+                                <exclude reference="j5O-YT-aLn"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="mainWebView" destination="FPy-Mh-tTo" id="Dwk-YQ-tlg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
